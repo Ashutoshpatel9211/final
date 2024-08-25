@@ -32,79 +32,60 @@
             width: 100%;
             margin-top: 15px;
         }
-
-        /* Table Styles */
-
-        /* Make the table responsive */
-        @media only screen and (max-width: 300px) {
-        table, thead, tbody, th, td {
-            display: block;
-        }
-
-        /* Hide table headers (but not display: none;, for accessibility) */
-        thead tr {
-            position: absolute;
-            top: -9999px;
-            left: -9999px;
-        }
-
-        tr {
-            border: 1px solid #ccc;
-        }
-
-        td {
-            /* Behave like a "row" */
-            border: none;
-            border-bottom: 1px solid #eee;
-            position: relative;
-            padding-left: 50%;
-        }
-
-        td:before {
-            /* Now like a table header */
-            position: absolute;
-            /* Top/left values mimic padding */
-            top: 6px;
-            left: 6px;
-            width: 45%;
-            padding-right: 10px;
-            white-space: nowrap;
-        }
-
-        /*
-        Label the data
-        */
-        td:nth-of-type(1):before { content: "Column 1"; }
-        td:nth-of-type(2):before { content: "Column 2"; }
-        td:nth-of-type(3):before { content: "Column 3"; }
-        }
-
-        /* Add some padding and a blue border */
-        table {
-        border-collapse: collapse;
-        width: 100%;
-        padding: 5px;
-        border: 1px solid rgb(243, 243, 243);
-        display: table;
-        margin-left: 0%;
-        }
-
-        /* Add some padding and a blue border to the table headers */
-        th {
-        border: 1px solid rgb(121, 203, 245);
-        padding: 10px;
-        background-color: #8c96b9;
-        }
-
-        /* Add some padding to the table cells */
-        td {
-        border: 1px solid rgb(0, 0, 0);
-        padding: 10px;
-        }
-
         .date-time {
             font-weight: bold;
             margin-bottom: 15px;
+            text-align: center;
+        }
+        .date-time span {
+            font-size: 1.2em;
+        }
+        @media only screen and (max-width: 300px) {
+            table, thead, tbody, th, td {
+                display: block;
+            }
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            tr {
+                border: 1px solid #ccc;
+            }
+            td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 50%;
+            }
+            td:before {
+                position: absolute;
+                top: 6px;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+            }
+            td:nth-of-type(1):before { content: "Column 1"; }
+            td:nth-of-type(2):before { content: "Column 2"; }
+            td:nth-of-type(3):before { content: "Column 3"; }
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            padding: 5px;
+            border: 1px solid rgb(243, 243, 243);
+            display: table;
+            margin-left: 0%;
+        }
+        th {
+            border: 1px solid rgb(121, 203, 245);
+            padding: 10px;
+            background-color: #8c96b9;
+        }
+        td {
+            border: 1px solid rgb(0, 0, 0);
+            padding: 10px;
         }
     </style>
 </head>
@@ -129,7 +110,7 @@
 
     <div class="container">
         <h2 style="margin-top: 30px;">You Can/Can't Donate Blood</h2>
-        <table >
+        <table>
             <thead>
                 <tr>
                     <th>CAN</th>
@@ -151,7 +132,9 @@
     <div class="container">
         <h2>Blood Donor Form</h2>
         <form style="background-color: rgb(185, 185, 200);" name="google-sheet" onsubmit="return handleSubmit(event)">
-            <div class="date-time" id="dateTime">Current Date and Time will appear here</div>
+            <div class="date-time">
+                <span id="crdate">Current Date and Time</span>
+            </div>
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" placeholder="Enter name" name="Name" required>
@@ -225,28 +208,38 @@
         </div>
         <div class="copywrites">
             <p>© 2024 Make A Blood Relation. All rights reserved.<br>
-         Designed by <a href="#">Ashutosh Patel</a> (BCA)
-        </div></p>
-    
+            Designed by <a href="#">Ashutosh Patel</a> (BCA)</p>
+        </div>
     </footer>
+
     <script>
-        function displayDateTime() {
+        function updateDateTime() {
             const now = new Date();
-            document.getElementById('dateTime').innerText = `Current Date and Time: ${now.toLocaleString()}`;
+            document.getElementById('crdate').innerText = now.toLocaleString();
         }
-        
+
         function handleSubmit(event) {
             event.preventDefault();
-            displayDateTime();
+            updateDateTime();
             const scriptURL = 'https://script.google.com/macros/s/AKfycbw5fXBFNvcQ4hB_xtuKz1Q5CXH3-wSvT3qvBDm1TsDzbcpWU13ynH0Dj5oYNjiSOMNZ/exec';
             const form = document.forms['google-sheet'];
             
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            // Include the current date and time in the form data
+            const formData = new FormData(form);
+            formData.append('crdate', document.getElementById('crdate').innerText);
+
+            fetch(scriptURL, { method: 'POST', body: formData })
                 .then(response => {
                     alert("Thanks for contacting us! We will contact you soon...");
                 })
                 .catch(error => console.error('Error!', error.message));
         }
+
+        // Update the date and time every second
+        setInterval(updateDateTime, 1000);
+        
+        // Initialize the date and time when the page loads
+        window.onload = updateDateTime;
     </script>
 </body>
 </html>
