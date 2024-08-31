@@ -229,11 +229,11 @@
    
     <div class="container">
         <h2>Blood Reciever Form</h2>
-        <form style="background-color: rgb(185, 185, 200);" name="google-sheet" onsubmit="return validateForm()">
+        <form style="background-color: rgb(185, 185, 200);" name="google-sheet" onsubmit="return handleSubmit(event)">
+            <div class="date-time">
+                <span id="Sdate">Current Date and Time</span>
+            </div>
             <div class="form-group">
-                <div class="date-time">
-                    <span id="crdate">Current Date and Time</span>
-                </div>
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" placeholder="Enter name" name="Name" required>
             </div>
@@ -250,7 +250,7 @@
           </div>
             <div class="form-group">
                 <label for="dob">Date of Birth:</label>
-                <input type="date" class="form-control" id="dob" name="DoB">
+                <input type="date" class="form-control" id="dob" name="DoB" min="1990-01-01">
             </div>
             <div class="form-group">
                 <label for="gender">Gender:</label>
@@ -263,7 +263,7 @@
             </div>
             <div class="form-group">
                 <label for="blood_group">Blood Group:</label>
-                <select class="form-control" id="blood_group" name="Blood_Group">
+                <select class="form-control" id="blood_group" name="Blood_Group" required>
                     <option value="" disabled selected>Select your Blood Group</option>
                     <option value="A+">A+</option>
                     <option value="A-">A-</option>
@@ -275,9 +275,9 @@
                     <option value="AB-">AB-</option>
                 </select>
             </div>
+            
             <button style="background-color: #6266e0;" type="reset" class="btn btn-primary">Reset</button> 
             <button type="submit" class="btn btn-primary">Submit</button>
-           
         </form>
     </div>
 
@@ -314,29 +314,35 @@
     
     </footer>
     <script>
-        
         function updateDateTime() {
             const now = new Date();
-            
-            document.getElementById('crdate').innerText = now.toLocaleString();
+            document.getElementById('Sdate').innerText = now.toLocaleString();
         }
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxN8_E4GTVtmHYwLOZXX6RJVirTQnhX4PyvTsB6LxRdfjGdpn6hEbEjPFhvJEX-v-w4/exec';
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            updateDateTime();
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxN8_E4GTVtmHYwLOZXX6RJVirTQnhX4PyvTsB6LxRdfjGdpn6hEbEjPFhvJEX-v-w4/exec';
         const form = document.forms['google-sheet'];
-    
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-            .then(response => {
-                alert("Thanks for contacting us! We will contact you soon...");
-            })
-            .catch(error => console.error('Error!', error.message));
-        });
-        
-   
+            // Include the current date and time in the form data
+            const formData = new FormData(form);
+            formData.append('Sdate', document.getElementById('Sdate').innerText);
+
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => {
+                    alert("Thanks for contacting us! We will contact you soon...");
+                })
+                .catch(error => console.error('Error!', error.message));
+        }
+
+        // Update the date and time every second
         setInterval(updateDateTime, 1000);
-       
         
+        // Initialize the date and time when the page loads
         window.onload = updateDateTime;
     </script>
+</body>
+</html>
+
     </body>
     </html>
