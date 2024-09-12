@@ -237,12 +237,17 @@
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" placeholder="Enter name" name="Name" required>
             </div>
-            Enter a valid mobile number
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="Email" 
+                minlength="14" maxlength="50" 
+                required oninvalid="this.setCustomValidity('Please enter a valid email')" oninput="setCustomValidity('')">
+            </div>
             <div class="form-group">
               <label for="Contact">Contact:</label>
               <input type="text" class="form-control" id="Contact" placeholder="Enter contact" name="Contact" 
                      pattern="\d{10}"  required
-                     oninput="this.setCustomValidity(this.value.length === 10 ? '' : 'Enter a valid mobile number' required)"
+                     oninput="this.setCustomValidity(this.value.length === 10 ? '' : 'Enter a valid mobile number')"
                      maxlength="10">
           </div>
             <div class="form-group">
