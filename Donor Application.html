@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Make a Blood Relation</title>
+    <title>Doner Application Form</title>
     <link rel="stylesheet" href="Styles.css">
+    <link rel="shortcut icon" href="blood-transfusion.png" type="image/png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -40,24 +41,35 @@
         .date-time span {
             font-size: 1.2em;
         }
-        @media only screen and (max-width: 300px) {
-            table, thead, tbody, th, td {
-                display: block;
-            }
-            thead tr {
-                position: absolute;
-                top: -9999px;
-                left: -9999px;
-            }
-            tr {
-                border: 1px solid #ccc;
-            }
-            td {
-                border: none;
-                border-bottom: 1px solid #eee;
-                position: relative;
-                padding-left: 50%;
-            }
+        table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px ;
+    margin: auto;
+    border: 4px black solid;
+    border-radius: 10px;
+    margin-left: 0%;
+    display: table;}
+
+thead th {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    border:2px solid #ff0000;
+}
+
+/* Table data cells */
+tbody td {
+    padding: 10px;
+    border: 2px solid #000000;
+    text-align: left;
+}
+
+/* Zebra striping for table rows */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
             td:before {
                 position: absolute;
                 top: 6px;
@@ -66,19 +78,9 @@
                 padding-right: 10px;
                 white-space: nowrap;
             }
-            td:nth-of-type(1):before { content: "Column 1"; }
-            td:nth-of-type(2):before { content: "Column 2"; }
-            td:nth-of-type(3):before { content: "Column 3"; }
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            padding: 5px;
-            border: 1px solid rgb(243, 243, 243);
-            display: table;
-            margin-left: 0%;
-        }
-        th {
+         
+        
+            th {
             border: 1px solid rgb(121, 203, 245);
             padding: 10px;
             background-color: #8c96b9;
@@ -92,7 +94,7 @@
 <body style="background-color: rgb(217, 242, 233);">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <a class="navbar-brand" href="#">Make A Blood Relation</a>
+        <a class="navbar-brand" href="#"><img src="blood-bank (1).png" style="height: 25px; margin-top: -10px;">  &nbsp;Make A Blood Relation</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -226,7 +228,7 @@
         function handleSubmit(event) {
             event.preventDefault();
             updateDateTime();
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbw5fXBFNvcQ4hB_xtuKz1Q5CXH3-wSvT3qvBDm1TsDzbcpWU13ynH0Dj5oYNjiSOMNZ/exec';
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbylgq1W6oqr1ZTG611dBLrubMIFkokExuswgq-k3uT6SHsjc3qCUsObk4SKgbdlEUVV/exec';
             const form = document.forms['google-sheet'];
             
             // Include the current date and time in the form data
