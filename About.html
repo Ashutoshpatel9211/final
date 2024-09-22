@@ -3,105 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Make a Blood Relation</title>
+    <title>Blood For Life</title>
     <link rel="stylesheet" href="Styles.css">
+    <link rel="shortcut icon" href="blood-transfusion.png" type="image/png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <style>
-        body {
-            background-color: #f8f9fa;
+    <script src="//code.tidio.co/egpkgfbtndmroplyue6dacrx7alvmn1l.js" async></script>
+        <style>
+         .bf .m-3 {
+            font-size: 2rem;
+            color: #d32f2f;
+            margin-bottom: 0.5em;
+            padding: 30px;
+            text-align: center;
+            margin: 1.5rem;
+            float: left;
         }
-        .container {
-            margin-top: 30px;
+
+        .m-k {
+            font-size: 3rem;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: #9807b5;
+            margin-bottom: 0.5em;
+            text-align: center;
+            margin: 1.5rem;
         }
-        form {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+
+        .bf p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
         }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
+
+        span,
+        .bf span {
+            color: #d32f2f;
             font-weight: bold;
         }
-        button {
-            width: 100%;
-            margin-top: 15px;
+
+        .bf ul {
+            list-style-type: disc;
+            padding-left: 20px;
         }
 
-        /* Table Styles */
+        .bf li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
 
-        /* Make the table responsive */
-        @media only screen and (max-width: 300px) {
-        table, thead, tbody, th, td {
+        .bf ul li b {
+            color: #2c3e50;
+        }
+
+        .bf .m-4 {
+            background-color: hwb(0 91% 0%);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            width: 95%;
+            /* margin-bottom: 2rem;*/
+
+        }
+
+        .bf h2::before {
+            content: '';
             display: block;
+            width: 50px;
+            height: 4px;
+            background-color: #d32f2f;
+            margin: 0 auto 10px;
         }
 
-        /* Hide table headers (but not display: none;, for accessibility) */
-        thead tr {
-            position: absolute;
-            top: -9999px;
-            left: -9999px;
+        @media (max-width: 768px) {
+            .bf{
+                margin-right: 20px;
+            }
+            
+            .bf .m-4 {
+                /* width: 70%; */
+                margin: 0 auto;
+            }
         }
 
-        tr {
-            border: 1px solid #ccc;
+        .bf ul {
+            margin: 1rem 0;
         }
 
-        td {
-            /* Behave like a "row" */
-            border: none;
-            border-bottom: 1px solid #eee;
-            position: relative;
-            padding-left: 50%;
+        .bf p:last-child {
+            margin-bottom: 0;
         }
-
-        td:before {
-            /* Now like a table header */
-            position: absolute;
-            /* Top/left values mimic padding */
-            top: 6px;
-            left: 6px;
-            width: 45%;
-            padding-right: 10px;
-            white-space: nowrap;
-        }
-
-        /*
-        Label the data
-        */
-       
-    }
-        /* Add some padding and a blue border */
-        table {
-        border-collapse: collapse;
-        width: 100%;
-        padding: 5px;
-        border: 1px solid rgb(243, 243, 243);
-        display: table;
-        margin-left: 0%;
-        }
-
-        /* Add some padding and a blue border to the table headers */
-        th {
-        border: 1px solid rgb(121, 203, 245);
-        padding: 10px;
-        background-color: #8c96b9;
-        }
-
-        /* Add some padding to the table cells */
-        td {
-        border: 1px solid rgb(0, 0, 0);
-        padding: 10px;
-        }
-
-        </style>
+    </style>
 </head>
-<body style="background-color: rgba(254, 227, 215, 0.649);">
+<body style="background-color: rgb(217, 242, 233);">
     
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <a class="navbar-brand" href="#"><img src="blood-bank (1).png" style="height: 25px; margin-top: -10px;">  &nbsp;Make A Blood Relation</a>
@@ -131,38 +126,133 @@
                 </ul>
             </div>
         </nav>
-        <h2 class="m-3">About Us</h2>
-                <div class="m-4">
-                    <p>
-                        The purpose of the "Make a Blood Relation" website is to collect data about donors and seekers who are interested in donating blood or who require it. Anyone who wants to visit our website to donate blood can do so.Anyone who is in need of blood can visit our website and can fill details to receive blood In addition, this website makes it possible for any general consumer to request blood online. The admin is the primary authority if necessary and can perform addition, deletion, and modification. The main objective of the online "Make a Blood Relation" is to keep track of information about donors, blood banks, blood groups, and blood seekers.
-                    </p>
-                    <p>
-                        Additionally Users can visit this website to get the information about the Guidelines for donating Blood and to recieve the Blood
-                    </p>
-                </div>
-                <h2 class="m-3">
-                    Affiliated organisations:
-                
-                </h2>
-                <ol class="m-4">
-                    <a href=""><li></li></a>
-                    <a href=""><li></li></a>
-                    <a href=""><li></li></a>
-                    <a href=""><li></li></a>
-                    <a href=""><li> </li> </a>
-                    <a href=""><li></li></a>
-                    <a href=""><li></li></a>
-                    
-                </ol>
-            </div>
+        <h2 class="m-k">About Us</h2>
+    <div class="bf">
         
-    
+        <div class="m-4">
+            <p>
+                Welcome to <span>BloodForLife</span> 🏥, a platform dedicated to saving lives through the power of blood
+                donation. We believe that donating blood is not just a generous act—it’s a vital contribution that
+                directly
+                impacts the
+                health and survival of individuals in need. Our mission is to connect willing blood donors with
+                recipients
+                in need, fostering a community that understands the importance of giving the gift of life.
+            </p>
+            <p>
+                The purpose of our website is to collect data about donors and seekers who are interested in donating
+                blood
+                or who require it. Anyone who wants to visit our website to donate blood can do so.Anyone who is in need
+                of
+                blood can visit our website and can fill details to receive blood In addition, this website makes it
+                possible for any general consumer to request blood online. The admin is the primary
+                authority if necessary and can perform addition, deletion, and modification. The main objective of the
+                online "Make a Blood Relation" is to keep track of information about donors, blood banks, blood groups,
+                and
+                blood seekers.
+            </p>
+            <p>
+                Additionally Users can visit this website to get the information about the Guidelines for donating Blood
+                and
+                to recieve the Blood
+            </p>
+        </div>
 
+        <h2 class="m-3">Who We Are</h2>
+        <div class="m-4">
+            <p>
+                At <span>BloodForLife</span> 🏥, we are a group of passionate students and volunteers for the blood
+                donation
+                cause. Founded
+                in Year 2024, our goal is to simplify the process of blood donation and make it accessible to everyone.
+                We
+                provide a big assistance to ensure that blood is always available for emergencies, surgeries, and
+                ongoing
+                treatments. Our platform serves as a bridge between those who wish to donate and those in urgent need,
+                creating a seamless and efficient donation process
+            </p>
+        </div>
+
+        <h2 class="m-3">Our Mission</h2>
+        <div class="m-4">
+            <p>
+                We aim to increase awareness about the importance of blood donation while making it easier for donors to
+                find opportunities and for recipients to receive the help they need. By providing up-to-date information
+                on
+                donation drives, blood requirements, and eligibility guidelines, we hope to inspire more people to take
+                part
+                in this life-saving initiative.
+            </p>
+        </div>
+
+        <h2 class="m-3">Why Blood Donation?</h2>
+        <div class="m-4">
+            <p>
+                Blood donation is crucial in healthcare, especially during medical emergencies, childbirth, surgeries,
+                cancer treatments, and managing chronic illnesses. With just one donation, a single person can save up
+                to
+                three lives. Unfortunately, many regions face a shortage of blood supplies, which puts lives at risk. By
+                facilitating blood donations through our platform, we hope to bridge this gap and ensure that blood is
+                available when and where it is needed most.
+            </p>
+        </div>
+
+        <h2 class="m-3">How We Operate</h2>
+        <div class="m-4">
+            <p>
+                Our platform is designed to make blood donation easy and accessible. We provide:
+            <ul>
+                <li><b>Donor Registration: </b>Easily sign up to become a donor, view upcoming donation drives, and
+                    track
+                    your donation history.</li>
+                <li><b>Blood Requests: </b>If you or a loved one need blood, our platform allows you to register for
+                    receiving blood , which will be provided to you as soon as possible.</li>
+                <li><b>Educational Resources: </b>Learn more about the blood donation process, donor eligibility, and
+                    the
+                    health benefits of donating blood.</li>
+                <li><b>Real-Time Updates: </b>Stay informed with real-time updates on local and national blood
+                    shortages,
+                    urgent requests, and opportunities to donate.</li>
+            </ul>
+            </p>
+        </div>
+
+        <h2 class="m-3">Our Values</h2>
+        <div class="m-4">
+            <p>
+            <ul>
+                <li><b>Compassion: </b>We believe in helping others, and we strive to foster a community of donors and
+                    recipients who care about saving lives.</li>
+                <li><b>Transparency: </b>We are committed to providing clear, accurate information on blood donation
+                    needs
+                    and practices.</li>
+                <li><b>Inclusivity: </b>Whether you're a first-time donor or a long-time supporter of the cause, we
+                    welcome
+                    you to join us in this life-saving mission.</li>
+                <li><b>Integrity: </b>We work closely with certified medical institutions to ensure that every blood
+                    donation is used responsibly and safely.</li>
+            </ul>
+            </p>
+        </div>
+
+        <h2 class="m-3" style="padding-top:11px">Join Us</h2>
+        <div class="m-4">
+            <p>
+                Your support can save lives. Whether you’re donating blood, hosting a blood drive, or simply spreading
+                the
+                word, every contribution counts. Together, we can make a difference—one drop at a time.
+            </p>
+        </div>
+    </div>
+        
     <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <h2>About</h2>
-                <p><a href="About.html">Information about the website.</a></p>
+                <p><a href="About.html">Welcome to <span>BloodForLife 🏥</span>,
+                     a platform for connecting blood donors and those in need.
+                    </a></p>
+
             </div>
             <div class="footer-section">
                 <h2>Address</h2>
@@ -172,23 +262,25 @@
             <div class="footer-section">
                 <h2>Contact</h2>
                 <p>Email: ashutoshpatel276001@gmail.com</p>
-                <p>Phone: (91) XXXX-XXXXXX</p>
+                <p>Phone: (91) XXXX-XX2030</p>
             </div>
             <div class="footer-section">
                 <h2>Social Media</h2>
                 <ul>
                     <li><a href="#">Facebook: Ashutoshpatel9211</a></li>
-                    <li><a href="#">Twitter:  Ashutoshpatel9211</a></li>
-                    <li><a href="#">Instagram: Ashutoshpatel9211</a></li>
-                    <li><a href="#">LinkedIn:  Ashutoshpatel9211</a></li>
-                </ul>
+                    <li><a href="#">Twitter: Ashutoshpatel9211</a></li>
+                    <li><a href="https://wa.me/8175012030" target="_blank">Message me on WhatsApp</a></li>
+                   <li><a href="https://www.instagram.com/ashutoshpatel9211" target="_blank">Follow me on Instagram</a></li>
+
+                    </ul>
             </div>
         </div>
         <div class="copywrites">
             <p>© 2024 Make A Blood Relation. All rights reserved.<br>
-         Designed by <a href="#">Ashutosh Patel</a> (BCA)
-        </div></p>
-    
+                Designed by <a href="#">Ashutosh Patel & Harsh Rai</a> (BCA)
+        </div>
+        </p>
+
     </footer>
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbw5fXBFNvcQ4hB_xtuKz1Q5CXH3-wSvT3qvBDm1TsDzbcpWU13ynH0Dj5oYNjiSOMNZ/exec';
