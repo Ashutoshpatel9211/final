@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="//code.tidio.co/egpkgfbtndmroplyue6dacrx7alvmn1l.js" async></script>
+
         <style>
          .bf .m-3 {
             font-size: 2rem;
@@ -76,17 +76,68 @@
             margin: 0 auto 10px;
         }
 
+        .team-section {
+            display: flex;
+            justify-content: space-around;
+            margin: 50px auto;
+            margin-left: 90px;
+            max-width: 1150px;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid #3498db;
+            /* Change the color for the border */
+            object-fit: cover;
+        }
+
+        .team-member h3 {
+            margin-top: 15px;
+            font-size: 1.2em;
+        }
+
+        .team-member p {
+            font-size: 1.1em;
+            color: #7f8c8d;
+        }
+
+        @media (max-width: 1300px){
+            .team-section {
+                margin-left: 0px;
+            }
+            footer h2{
+                text-align: center;
+            }
+        }
+
         @media (max-width: 768px) {
-            .bf{
+            .bf {
                 margin-right: 20px;
             }
-            
+
             .bf .m-4 {
                 /* width: 70%; */
                 margin: 0 auto;
             }
-        }
 
+            .team-section {
+                display: flex;
+                flex-direction: column;
+                margin-left: 0px;
+            }
+
+            .team-member img {
+                width: 130px;
+                height: 130px;
+            }
+
+        }
         .bf ul {
             margin: 1rem 0;
         }
@@ -243,7 +294,26 @@
                 word, every contribution counts. Together, we can make a difference—one drop at a time.
             </p>
         </div>
+        <div class="team-section">
+            <h2 class="m-3" style="padding-top:70px">Our Team</h2><br>
+            <div class="team-member">
+                <img src="harsh.png" alt="Member 1">
+                <h3>Harsh Rai</h3>
+                <p>Designer</p>
+            </div>
+            <div class="team-member">
+                <img src="ashu.png" alt="Member 2">
+                <h3>Ashutosh Patel</h3>
+                <p>Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="saurabh.png" alt="Member 3">
+                <h3>Saurabh Yadav</h3>
+                <p>Project Manager</p>
+            </div>
+        </div>
     </div>
+
         
     <footer>
         <div class="footer-content">
