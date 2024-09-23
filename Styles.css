@@ -4,10 +4,11 @@ body {
     background-repeat: repeat;
     background-size: cover;
 }
+
 .card {
     margin: 0 auto;
     float: none;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: white;
     margin: 20px;
     padding: 20px;
@@ -16,19 +17,43 @@ body {
 }
 
 .card:hover {
-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.container {
+    margin-bottom: 10px;
 }
 
 /* Set sizes of all the images inside the cards equally */
 .card img {
-width: 100%;
-height: auto;
+    width: 100%;
+    height: auto;
 }
+
 @media (max-width: 768px) {
-   video {
-       width: 100%;
-       height: auto;
-   }
+    #myCarousel img {
+        height: 300px;
+    }
+
+    video {
+        width: 100%;
+        height: auto;
+    }
+
+    #sm {
+        font-size: 11px;
+    }
+
+    .iframe-container {
+        width: 90%;
+    }
+
+    iframe {
+        width: 400px;
+    }
+    #bb{
+        width: 90%;
+    }
 }
 
 /* Footer */
@@ -42,7 +67,7 @@ footer {
     justify-content: space-around;
     flex-wrap: wrap;
     max-width: 1200px;
-    margin:auto;
+    margin: auto;
 }
 
 .footer-section {
@@ -72,13 +97,15 @@ footer {
 .footer-section a:hover {
     text-decoration: underline;
 }
-.copywrites{
+
+.copywrites {
     display: flex;
     justify-content: center;
     font-size: medium;
     color: #ccde8e;
-    
+
 }
+
 /* Chat Bot */
 .chatbot-container {
     position: fixed;
@@ -119,24 +146,28 @@ footer {
     border-radius: 3px;
     cursor: pointer;
 }
+
 /* Bot boy*/
-.bot{
+.bot {
     background-color: #f2f2f2;
 }
-.bot{
+
+.bot {
     padding-left: 30px;
     padding-top: 30px;
 }
-.iframe{
+
+.iframe {
     display: block;
     block-size: 60%
-    
 }
-#Back{
+
+#Back {
     margin-left: 35px;
     margin-top: 5px;
 }
-span{
-            color: #d32f2f;
-            font-weight: bold;
-        }
+
+span {
+    color: #d32f2f;
+    font-weight: bold;
+}
